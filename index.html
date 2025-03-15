@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KPK</title>
+    <title>رمضان امداد سٹیٹس چیک</title>
     <style>
         body {
             font-family: 'Noto Nastaliq Urdu', serif;
@@ -13,24 +13,25 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
             flex-direction: column;
+            text-align: center;
         }
         .container {
             background-color: #fff;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
             max-width: 400px;
-            width: 100%;
+            width: 90%;
         }
         h1 {
             color: #333;
             font-size: 24px;
+            margin-bottom: 20px;
         }
         input[type="text"] {
-            width: 100%;
+            width: calc(100% - 20px);
             padding: 10px;
             margin: 10px 0;
             border: 1px solid #ccc;
@@ -45,6 +46,8 @@
             border-radius: 5px;
             cursor: pointer;
             font-size: 16px;
+            width: 100%;
+            margin-top: 10px;
         }
         button:hover {
             background-color: #45a049;
@@ -56,11 +59,13 @@
             display: none;
         }
         .message img {
-            width: 100px;
+            width: 100%;
+            max-width: 200px;
             margin-top: 10px;
+            border-radius: 10px;
         }
         .green-button {
-            background-color: #4CAF50;
+            background-color: #28a745; /* Changed to a more visible green */
             color: white;
             padding: 10px 20px;
             border: none;
@@ -69,24 +74,31 @@
             font-size: 16px;
             margin-top: 20px;
             display: none;
+            width: 100%;
+            text-decoration: none;
         }
         .green-button:hover {
-            background-color: #45a049;
+            background-color: #218838;
+        }
+        .time-message {
+            font-size: 14px;
+            color: #555;
+            margin-top: 10px;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>KPK</h1>
-        <input type="text" id="cnic" placeholder="اپنا CNIC درج کریں">
-        <button onclick="showMessage()">جمع کروائیں</button>
+        <h1>رمضان 10,000 روپے امداد کی سٹیٹس چیک کریں!</h1>
+        <input type="text" id="cnic" placeholder="اپنا CNIC نمبر درج کریں">
+        <button onclick="showMessage()">سٹیٹس چیک کریں</button>
         <div class="message" id="message">
-            <p>براہ کرم معذرت، نظام کی دیکھ بھال کی جا رہی ہے۔</p>
-            <p>براہ کرم نیچے دیے گئے سبز بٹن پر کلک کریں۔</p>
-            <!-- <img src="https://via.placeholder.com/100" alt="Maintenance Image"> -->
+            <p>آپ کی درخواست پر کارروائی جاری ہے۔ براہ کرم ایک گھنٹے بعد دوبارہ چیک کریں۔</p>
+            <img src="https://via.placeholder.com/200" alt="Ramadan Relief Image">
+            <p class="time-message">اگلی چیک: <span id="time"></span></p>
         </div>
 
-        <button class="green-button" id="greenButton" onclick="window.location.href='https://echifobi.top/4/9056944'">سبز بٹن</button>
+        <button class="green-button" id="greenButton" onclick="window.location.href='https://example.com'">سبز بٹن</button>
     </div>
 
     <script>
@@ -95,8 +107,14 @@
             if (cnic) {
                 document.getElementById('message').style.display = 'block';
                 document.getElementById('greenButton').style.display = 'block';
+
+                // Set the time for the next check
+                const now = new Date();
+                now.setHours(now.getHours() + 1);
+                const timeString = now.toLocaleTimeString('ur-PK', { hour: '2-digit', minute: '2-digit' });
+                document.getElementById('time').textContent = timeString;
             } else {
-                alert('براہ کرم اپنا CNIC درج کریں۔');
+                alert('براہ کرم اپنا CNIC نمبر درج کریں۔');
             }
         }
     </script>
